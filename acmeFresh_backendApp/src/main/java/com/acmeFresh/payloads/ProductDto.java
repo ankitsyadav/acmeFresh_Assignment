@@ -1,15 +1,10 @@
 package com.acmeFresh.payloads;
 
-import javax.validation.constraints.NotBlank;
-
 import lombok.Data;
 
 @Data
-public class ProductDto {
-
-	private Integer productId;
+public class ProductDto {	
 	
-	@NotBlank
 	private String productName;
 	
 }

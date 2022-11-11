@@ -30,20 +30,6 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDto updateUser(UserDto userDto, Integer userId) {
-		// TODO Auto-generated method stub
-		User user = this.userRepo.findById(userId)
-				.orElseThrow(() -> new ResourceNotFoundException("User", "userId", userId));
-		user.setUserName(userDto.getUserName());
-		user.setUserEmail(userDto.getUserEmail());
-		user.setUserPassword(userDto.getUserPassword());
-
-		User updatedUser = this.userRepo.save(user);
-
-		return this.modelMapper.map(updatedUser, UserDto.class);
-	}
-
-	@Override
 	public UserDto getUserById(Integer userId) {
 		// TODO Auto-generated method stub
 		User user = this.userRepo.findById(userId)
