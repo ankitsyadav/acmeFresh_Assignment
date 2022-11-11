@@ -19,6 +19,9 @@ import com.acmeFresh.payloads.ApiResponse;
 import com.acmeFresh.payloads.ProductDto;
 import com.acmeFresh.services.ProductService;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Authorization;
+
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
@@ -37,6 +40,7 @@ public class ProductController {
 //	delete - delete user
 
 	@DeleteMapping("/{pId}")
+	@ApiOperation(value = "Update registration detail", authorizations = { @Authorization(value = "basicAuth") })
 	public ResponseEntity<ApiResponse> deleteProduct(@PathVariable Integer pId) {
 
 		this.pService.deleteProduct(pId);
@@ -46,16 +50,15 @@ public class ProductController {
 //get user
 
 	@GetMapping("/{pId}")
+	@ApiOperation(value = "Update registration detail", authorizations = { @Authorization(value = "basicAuth") })
 	public ResponseEntity<ProductDto> getProduct(@PathVariable Integer pId) {
 		ProductDto pDto = this.pService.getProduct(pId);
 		return ResponseEntity.ok(pDto);
 	}
-	
-	
+
 	@GetMapping("/")
 	public ResponseEntity<List<ProductDto>> getAllProducts() {
 		return ResponseEntity.ok(this.pService.getAllProduct());
 	}
-	
 
 }
