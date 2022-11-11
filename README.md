@@ -1,4 +1,7 @@
 # acmeFresh_Assignment Round 1 assignment for acme fresh - bangalore 
+
+
+
 .......................................................................
 i have included form based basic Authentication:
 
@@ -14,5 +17,9 @@ password= admin
 To fire any API from Swagger or PostMan just provide Authorisation with basic authorisation and use the username and password given above.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
+
+Application URL - http://localhost:8888/
+
+Swagger URL - http://localhost:8888/swagger-ui.html
 
 
